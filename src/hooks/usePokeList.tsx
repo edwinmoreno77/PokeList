@@ -10,7 +10,7 @@ export const usePokeList = () => {
   const [offset, setOffset] = useState(0);
   const [imagen, setImagen] = useState(initialUrl);
   const [animation, setAnimation] = useState(
-    "h-80 w-80 rounded-xl p-5 bg-green-600"
+    "h-80 w-80 rounded-xl p-5 bg-green-600 cursor-pointer"
   );
   const [pokemon, setPokemon] = useState<IPokemon>();
   const [pagina, setPagina] = useState(1);
@@ -33,11 +33,11 @@ export const usePokeList = () => {
     setPokemon(data);
 
     setTimeout(() => {
-      setAnimation("h-80 w-80 rounded-xl p-5 bg-green-600");
+      setAnimation("h-80 w-80 rounded-xl p-5 bg-green-600 cursor-pointer");
     }, 1000);
   }
   const incrementList = () => {
-    if (offset >= 1280) return;
+    if (offset >= 1280 || pagina === 86) return;
     setOffset(offset + 15);
     setPagina(pagina + 1);
   };

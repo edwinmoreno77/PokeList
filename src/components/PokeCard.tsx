@@ -20,7 +20,12 @@ export const PokeCard: FC<IPokeCard> = ({
         </h1>
       </div>
       <div className="flex justify-center items-center justify-items-center h-64">
-        <img className={animation} src={imagen} alt="pokemon" />
+        <img
+          onClick={() => setData([])}
+          className={animation}
+          src={imagen}
+          alt="pokemon"
+        />
       </div>
       <div className="flex flex-1 rounded-xl justify-around text-2xl mt-10">
         <h1 className=" bg-slate-900 p-3 rounded-xl">{`Altura: ${pokemon?.height}`}</h1>
