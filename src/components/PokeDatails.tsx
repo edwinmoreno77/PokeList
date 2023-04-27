@@ -13,17 +13,17 @@ export const PokeDatails: FC<Props> = ({ pokemon }) => {
       </h6>
       <div className="flex flex-row justify-center items-center">
         <img
-          className="w-36 h-36"
+          className="w-auto h-auto"
           alt="poke"
           src={pokemon?.sprites.back_default}
         />
         <img
-          className="w-36 h-36"
+          className="w-auto h-auto"
           alt="poke"
           src={pokemon?.sprites.front_default}
         />
         <img
-          className="w-36 h-36"
+          className="w-auto h-auto"
           alt="poke"
           src={pokemon?.sprites.back_shiny}
         />

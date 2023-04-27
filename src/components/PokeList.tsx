@@ -9,7 +9,7 @@ export const PokeList: FC<IPokeList> = ({
   incrementList,
 }) => {
   return (
-    <div className="m-4 p-4 text-center rounded-xl bg-slate-800 w-96">
+    <div className="m-4 p-4 text-center rounded-xl bg-slate-800 w-2/6">
       <ul>
         {data?.map((poke: Ipoke) => {
           const pokeName =
@@ -21,7 +21,7 @@ export const PokeList: FC<IPokeList> = ({
               className="flex flex-initial cursor-pointer text-2xl justify-center items-center bg-cyan-900 mb-1 rounded-xl hover:bg-cyan-700"
               key={poke.name}
             >
-              <p className="flex flex-1 justify-between m-1">
+              <p className="flex flex-1 justify-between">
                 <span className="ms-10">{`${number}`}</span>
                 <span className="mr-10">{`${pokeName}`}</span>
               </p>
@@ -29,8 +29,8 @@ export const PokeList: FC<IPokeList> = ({
           );
         })}
       </ul>
-      <h1 className="text-2xl m-3">{`Numero de pagina ${pagina}`}</h1>
-      <div>
+      <h1 className="text-2xl mt-6">{`Numero de pagina ${pagina}`}</h1>
+      <div className="text-xl mt-4">
         <button
           onClick={decrement}
           className="bottom-2 bg-slate-950 rounded-xl p-3 m-3  hover:bg-cyan-700"

@@ -9,11 +9,13 @@ export const usePokeList = () => {
   const [data, setData] = useState([]);
   const [offset, setOffset] = useState(0);
   const [imagen, setImagen] = useState(initialUrl);
-  const [animation, setAnimation] = useState("");
+  const [animation, setAnimation] = useState(
+    "h-80 w-80 rounded-xl p-5 bg-green-600"
+  );
   const [pokemon, setPokemon] = useState<IPokemon>();
   const [pagina, setPagina] = useState(1);
 
-  const url = `https://pokeapi.co/api/v2/pokemon?limit=12&offset=${offset}`;
+  const url = `https://pokeapi.co/api/v2/pokemon?limit=15&offset=${offset}`;
 
   async function getData() {
     const response = await fetch(url);
@@ -22,25 +24,27 @@ export const usePokeList = () => {
   }
 
   async function getImage(url: RequestInfo | URL) {
-    setAnimation("animate-pulse");
+    setAnimation(
+      "animate-ping absolute inline-flex h-32 w-32 rounded-full bg-green-600 opacity-75"
+    );
     const response = await fetch(url);
     const data = await response.json();
     setImagen(data.sprites.other.dream_world.front_default);
     setPokemon(data);
 
     setTimeout(() => {
-      setAnimation("");
-    }, 2500);
+      setAnimation("h-80 w-80 rounded-xl p-5 bg-green-600");
+    }, 1000);
   }
   const incrementList = () => {
     if (offset >= 1280) return;
-    setOffset(offset + 12);
+    setOffset(offset + 15);
     setPagina(pagina + 1);
   };
 
   const decrement = () => {
     if (offset === 0) return;
-    setOffset(offset - 12);
+    setOffset(offset - 15);
     setPagina(pagina - 1);
   };
 

@@ -1,6 +1,6 @@
-import { PokeDatails } from "../../components/PokeDatails";
-import { PokeList } from "../../components/PokeList";
-import { PokeCard } from "../../components/PokeCard";
+import { PokeDatails } from "../components/PokeDatails";
+import { PokeList } from "../components/PokeList";
+import { PokeCard } from "../components/PokeCard";
 import { usePokeList } from "@/hooks/usePokeList";
 
 export default function Home() {
