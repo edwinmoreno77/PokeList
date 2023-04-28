@@ -1,5 +1,7 @@
 import { IPokeCard } from "@/types/pokeInterface";
 import React, { FC } from "react";
+import pokeImage from "../../public/pokemon.png";
+import Image from "next/image";
 
 export const PokeCard: FC<IPokeCard> = ({
   pokemon,
@@ -10,12 +12,14 @@ export const PokeCard: FC<IPokeCard> = ({
 }) => {
   return (
     <div className="m-4 p-14 bg-slate-800 h-full rounded-xl hover:shadow-xl w-2/6">
-      <h1 className="text-2xl m-2 p-2">POKEMON</h1>
+      <div className="flex flex-auto justify-center items-center mb-5">
+        <Image src={pokeImage} alt="poke-titulo" width={150} height={150} />
+      </div>
       <div className="flex flex-1 justify-around mb-7 p-2">
         <h1 className="text-2xl bg-slate-900 rounded-full p-3 m-1">
           {pokemon?.id}
         </h1>
-        <h1 className="text-2xl bg-slate-900 rounded-3xl p-3 m-1">
+        <h1 className="text-2xl bg-slate-900 rounded-3xl p-3 m-1 capitalize">
           {pokemon?.name}
         </h1>
       </div>

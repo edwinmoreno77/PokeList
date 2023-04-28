@@ -12,8 +12,6 @@ export const PokeList: FC<IPokeList> = ({
     <div className="m-4 p-4 text-center rounded-xl bg-slate-800 w-2/6">
       <ul>
         {data?.map((poke: Ipoke) => {
-          const pokeName =
-            poke.name.slice(0, 1).toUpperCase() + poke.name.slice(1, 20);
           const [number] = poke.url.split("/").slice(6, 7);
           return (
             <li
@@ -23,13 +21,13 @@ export const PokeList: FC<IPokeList> = ({
             >
               <p className="flex flex-1 justify-between">
                 <span className="ms-10">{`${number}`}</span>
-                <span className="mr-10">{`${pokeName}`}</span>
+                <span className="mr-10 capitalize">{`${poke.name}`}</span>
               </p>
             </li>
           );
         })}
       </ul>
-      <h1 className="text-2xl mt-6">{`Numero de pagina ${pagina}`}</h1>
+      <h1 className="text-sm mt-6">{`Pagina ${pagina}`}</h1>
       <div className="text-xl mt-4">
         <button
           onClick={decrement}
